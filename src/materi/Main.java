@@ -2,52 +2,33 @@ package materi;
 
 public class Main {
     public static void main(String[] args) {
-        Lingkaran lingkaranMerah = new Lingkaran();
+        // Memanggil constructor
+        new Lingkaran();
+
+        // // Membuat object dengan constructor tanpa di simpan ke suatu object
+        new Lingkaran(1);
+
+        // // Cara Sebelumnya
+        Lingkaran lingkaran = new Lingkaran();
+        lingkaran.jariJari = 1;
+        System.out.println(lingkaran.toString());
+        System.out.println();
+
+        // // Memasukkan nilai menggunakan constructor
+        Lingkaran lingkaranMerah = new Lingkaran(1);
+        System.out.println(lingkaranMerah);
+        System.out.println();
+
+        Lingkaran lingkaranKuning = new Lingkaran();
+        System.out.println(lingkaranKuning);
+        System.out.println();
         
-        // CARA 1
-        lingkaranMerah.jariJari = 7;
-        // lingkaranMerah.jariJari = 2; // -> penggunaan default value
-        
-        // Diameter -> diameter = 2 * jari-jari
-        double diameter = 2 * lingkaranMerah.jariJari;
+        Lingkaran lingkaranHijau = new Lingkaran(10, "Lingkaran Hijau");
+        System.out.println(lingkaranHijau);
+        System.out.println();
 
-        // Keliling -> keliling = 2 * jari-jari * PI
-        double keliling = 2 * lingkaranMerah.jariJari * Math.PI;
-
-        // Mengubah nilai jari-jari
-        // lingkaranMerah.jariJari = 1;
-
-        // Luas -> luas = jari-jari * jari-jari * PI
-        double luas = lingkaranMerah.jariJari * lingkaranMerah.jariJari * Math.PI;
-
-        System.out.println("Jari-jari\t: " + lingkaranMerah.jariJari);
-        System.out.println("Diameter\t: " + diameter);
-        System.out.println("Keliling\t: " + keliling);
-        System.out.println("Luas\t\t: " + luas);
-
-        /*
-
-        // CARA 2 | langsung menggunakan default value
-        // Diameter -> diameter = 2 * jari-jari
-        double diameter = lingkaranMerah.getDiameter();
-
-        // Keliling -> keliling = 2 * jari-jari * PI
-        double keliling = lingkaranMerah.getKeliling();
-
-        // Mengubah nilai jari-jari
-        // lingkaranMerah.setJariJari(1);
-
-        // Luas -> luas = jari-jari * jari-jari * PI
-        double luas = lingkaranMerah.getLuas();
-
-        System.out.println("Jari-jari\t: " + lingkaranMerah.jariJari);
-        System.out.println("Diameter\t: " + diameter);
-        System.out.println("Keliling\t: " + keliling);
-        System.out.println("Luas\t\t: " + luas);
-
-        // CARA 3 | menampikan dengan toString()
-        System.out.println(lingkaranMerah.toString());
-
-        **/
+        // // Constructor langsung menyesuaikan jumlah parameter dan tipa data yang ada
+        Lingkaran lingkaranUngu = new Lingkaran("sepuluh", "Lingkaran Ungu");
+        System.out.println(lingkaranUngu);
     }
 }
