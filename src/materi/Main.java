@@ -2,20 +2,8 @@ package materi;
 
 public class Main {
     public static void main(String[] args) {
-        // Memanggil constructor
-        new Lingkaran();
-
-        // // Membuat object dengan constructor tanpa di simpan ke suatu object
-        new Lingkaran(1);
-
-        // // Cara Sebelumnya
-        Lingkaran lingkaran = new Lingkaran();
-        lingkaran.jariJari = 1;
-        System.out.println(lingkaran.toString());
-        System.out.println();
-
-        // // Memasukkan nilai menggunakan constructor
-        Lingkaran lingkaranMerah = new Lingkaran(1);
+        // Membuat 3 objek lingkaran dan menampilkan informasi lingkaran satu persatu
+        Lingkaran lingkaranMerah = new Lingkaran("Lingkaran Merah", 1);
         System.out.println(lingkaranMerah);
         System.out.println();
 
@@ -23,12 +11,11 @@ public class Main {
         System.out.println(lingkaranKuning);
         System.out.println();
         
-        Lingkaran lingkaranHijau = new Lingkaran(10, "Lingkaran Hijau");
+        Lingkaran lingkaranHijau = new Lingkaran("Lingkaran Hijau", 10);
         System.out.println(lingkaranHijau);
         System.out.println();
 
-        // // Constructor langsung menyesuaikan jumlah parameter dan tipa data yang ada
-        Lingkaran lingkaranUngu = new Lingkaran("sepuluh", "Lingkaran Ungu");
-        System.out.println(lingkaranUngu);
+        // Menampilkan semua informasi object lingkaran sekaligus
+        Lingkaran.display();
     }
 }

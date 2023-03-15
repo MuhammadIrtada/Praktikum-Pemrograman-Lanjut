@@ -1,63 +1,63 @@
 package materi;
 
 public class Lingkaran {
-    public double jariJari;
-    // public double jariJari = 7; // -> memberi nilai default
-    public String nama;
+    private String nama;
+    private double jariJari;
+    
+    // Final, digunakan untuk menetapkan suatu konstanta
+    // Jika memberikan nilai pada variabel yang final maka nantinya variabel tersebut nilainya tidak dapat dirubah-rubah lagi
+    private final double PI = 22d/7; // -> jika tidak diberikan d maka output berupa integer
+    private final String namaLingkaran = "Lingkaran";
 
-    // Jika constructor tidak melakukan apa-apa atau kosong boleh untuk tidak ditulis
-    // Bisa juga digunakan untuk memberi nilai default
+    // Static, digunakan untuk menggunakan variabel atau method tanpa harus melakukan instansiasi object
+    // Jika suatu variabel atau method menggunakan static maka tidak bisa memanfaatkan variabel atau method yang tidak static
+
+    // private int jumlahLingkaran; // -> error karena digunakan di method static
+    private static int jumlahLingkaran;
+    private static Lingkaran[] objectLingkaran = new Lingkaran[10];
+
     public Lingkaran(){
+        objectLingkaran[jumlahLingkaran] = this;
+        jumlahLingkaran++;
+
         jariJari = 7;
-        nama = "Lingkaran belum memiliki nama";
-        System.out.println("Lingkaran baru berhasil dibuat");
+        nama = namaLingkaran + " " + jumlahLingkaran;
     }
 
-    // // Constructor dapat dibuat lebih dari satu 
-    // // Asalkan tipe atau jumlah parameter berbeda
-    public Lingkaran(double newJariJari){
+    public Lingkaran(String newNama, double newJariJari){
+        objectLingkaran[jumlahLingkaran] = this;
+        jumlahLingkaran++;
+
+        nama = newNama;
         jariJari = newJariJari;
     }
 
-    // // Meskipun nama variabel berbeda tapi tipedata sama maka akan terjadi error
-    // public Lingkaran(double jariJariBaru){
-    //     jariJari = jariJariBaru;
-    // }
-
-    // // Tidak error karena tipa data berbeda
-    public Lingkaran(String newJariJari){
-        jariJari = Double.parseDouble(newJariJari);
+    public String getNama(){
+        return nama; 
     }
 
-    // // Tidak error karena jumlah parameter berbeda
-    public Lingkaran(double newJariJari, String newNama){
-        jariJari = newJariJari;
-        nama = newNama;
-    }
-
-    // // Tidak error karena jumlah parameter dan tipe data ada yang berbeda
-    public Lingkaran(String newJariJari, String newNama){
-        jariJari = Double.parseDouble(newJariJari);
-        nama = newNama;
+    public double getJariJari(){
+        return jariJari; 
     }
 
     public double getDiameter(){
-        double diameter = jariJari * 2;
-        return diameter;
-        // return jariJari * 2; // -> kalau mau cepetnya bisa gini
+        return jariJari * 2; 
     }
 
     public double getKeliling(){
-        double keliling = 2 * jariJari * Math.PI;
-        // double keliling = getDiameter() * Math.PI; // -> banyak jalan ke roma
-        return keliling;
+        return getDiameter() * PI;
     }
 
     public double getLuas(){
-        // double luas = jariJari * jariJari * Math.PI;
-        double luas = Math.pow(jariJari, 2) * Math.PI;
-        return luas;
-        // return Math.round(luas); // -> kalo diperlukan pembulatan
+        return Math.pow(jariJari, 2) * PI;
+    }
+
+    public int getJumlahLingkaran(){
+        return jumlahLingkaran;
+    }
+
+    public void setNama(String newNama) {
+        nama = newNama;
     }
 
     public void setJariJari(double newJariJari) {
@@ -74,5 +74,19 @@ public class Lingkaran {
     public String toString() {
         String tampilan = String.format("Nama\t\t: %s\nJari-jari\t: %f\nDiameter\t: %f\nKeliling\t: %f\nLuas\t\t: %f", nama, jariJari, getDiameter(), getKeliling(), getLuas());
         return tampilan;
+    }
+
+    // Untuk menampilkan semua object lingkaran yang telah dibuat
+    public static void display(){
+        for (int i = 0; i < jumlahLingkaran; i++) {
+            System.out.println("Lingkaran ke-" + (i+1));
+            System.out.println("-".repeat(40));
+
+            String tampilan = String.format("Nama\t\t: %s\nJari-jari\t: %f\nDiameter\t: %f\nKeliling\t: %f\nLuas\t\t: %f", objectLingkaran[i].nama, objectLingkaran[i].jariJari, objectLingkaran[i].getDiameter(), objectLingkaran[i].getKeliling(), objectLingkaran[i].getLuas());
+            System.out.println(tampilan);
+
+            System.out.println("=".repeat(40));
+            System.out.println();
+        }
     }
 }
