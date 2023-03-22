@@ -1,0 +1,70 @@
+public class Main {
+    public static void main(String[] args) {
+            ternakPakKiw bebekTelurBiasa = new ternakPakKiw("Bebek", "Telur biasa", 15,5);
+            ternakPakKiw bebekTelurAsin = new ternakPakKiw("Bebek", "Telur asin", 10,8);
+            ternakPakKiw untaSusuPutih = new ternakPakKiw("Unta", "Susu putih", 3, 10);
+            ternakPakKiw untaSusuCoklat = new ternakPakKiw("Unta", "Susu coklat", 4, 15);
+            ternakPakKiw dombaBuluHitam = new ternakPakKiw("Domba", "Bulu hitam", 4, 9);
+            ternakPakKiw dombaBuluPutih = new ternakPakKiw("Domba", "Bulu putih", 6, 14);
+
+            //BEBEK
+            bebekTelurBiasa.cetakJenis();
+            bebekTelurBiasa.cetakGaris1();
+            bebekTelurBiasa.setDosis(5);
+            bebekTelurAsin.setDosis(8);
+
+            bebekTelurBiasa.cetakRasHewan();
+            bebekTelurBiasa.cetakDosisHewan();
+            bebekTelurBiasa.cetakGaris1();
+
+            bebekTelurAsin.cetakRasHewan();
+            bebekTelurAsin.cetakDosisHewan();
+            bebekTelurBiasa.cetakGaris1();
+
+            bebekTelurBiasa.cetakDosisHewanTotal();
+            bebekTelurAsin.cetakDosisHewanTotal();
+            bebekTelurAsin.cetakDosisHewanTotal(bebekTelurBiasa);
+            bebekTelurBiasa.cetakGaris2();
+            System.out.println();
+
+            //UNTA
+            untaSusuPutih.cetakJenis();
+            untaSusuPutih.cetakGaris1();
+            untaSusuPutih.setDosis(10);
+            untaSusuCoklat.setDosis((15));
+
+            untaSusuPutih.cetakRasHewan();
+            untaSusuPutih.cetakDosisHewan();
+            untaSusuPutih.cetakGaris1();
+
+            untaSusuCoklat.cetakRasHewan();
+            untaSusuCoklat.cetakDosisHewan();
+            untaSusuCoklat.cetakGaris1();
+
+            untaSusuPutih.cetakDosisHewanTotal();
+            untaSusuCoklat.cetakDosisHewanTotal();
+            untaSusuCoklat.cetakDosisHewanTotal(untaSusuPutih);
+            untaSusuCoklat.cetakGaris2();
+            System.out.println();
+
+            //DOMBA
+            dombaBuluPutih.cetakJenis();
+            dombaBuluHitam.cetakGaris1();
+            dombaBuluHitam.setDosis((9));
+            dombaBuluPutih.setDosis((14));
+
+            dombaBuluHitam.cetakRasHewan();
+            dombaBuluHitam.cetakDosisHewan();
+            dombaBuluHitam.cetakGaris1();
+
+            dombaBuluPutih.cetakRasHewan();
+            dombaBuluPutih.cetakDosisHewan();
+            untaSusuPutih.cetakGaris1();
+
+            dombaBuluHitam.cetakDosisHewanTotal();
+            dombaBuluPutih.cetakDosisHewanTotal();
+            dombaBuluPutih.cetakDosisHewanTotal(dombaBuluHitam);
+            dombaBuluHitam.cetakGaris2();
+
+    }
+    }
