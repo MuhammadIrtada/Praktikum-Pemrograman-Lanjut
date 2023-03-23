@@ -1,0 +1,61 @@
+public class ternakPakKiw {
+    private String jenis;
+    private String ras;
+    private int jumlah;
+    private int dosis;
+    private double [] value = new double[2];
+    private int index = 0;
+
+    public ternakPakKiw(String jenis, String ras, int jumlah, int dosis) {
+        this.jenis = jenis;
+        this.ras = ras;
+        this.jumlah = jumlah;
+        this.dosis = dosis;
+    }
+    public String getRas(){
+        return ras;
+    }
+    public int getJumlah() {
+        return jumlah;
+    }
+    public int getDosis() {
+        return dosis;
+    }
+    public void setJenis(){
+        this.jenis = jenis;
+    }
+    public void setDosis(int dosis) {
+        this.dosis = dosis;
+    }
+
+    public void cetakJenis(){
+        System.out.println("Jenis                  : " + jenis);
+    }
+    public void cetakRasHewan() {
+        System.out.println("Ras                    : " + ras);
+    }
+
+    public void cetakDosisHewan() {
+        System.out.println("Jumlah                 : " + jumlah + " ekor");
+        System.out.println("Dosis obat/ekor/hari   : " + dosis + "ml");
+    }
+
+    public void cetakDosisHewanTotal() {
+        System.out.println("Jumlah dosis obat/hari : " + (jumlah * dosis) + "ml");
+
+    }
+    public void cetakDosisHewanTotal(ternakPakKiw hai){
+        value[0] = jumlah * dosis;
+        value[1] = hai.jumlah * hai.dosis;
+        System.out.println("Total dosis obat/hari  : " + (int) (value[0] + value[1]) + "ml");
+    }
+    public void cetakGaris1(){
+        System.out.println("-".repeat(40));
+    }
+    public void cetakGaris2(){
+        System.out.println("=".repeat(40));
+    }
+}
+
+
+
