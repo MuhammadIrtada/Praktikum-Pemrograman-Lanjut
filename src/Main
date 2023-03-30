@@ -1,0 +1,176 @@
+import java.util.Scanner;
+
+public class Main {
+    static Ternak Bebek;
+    static Ternak Domba;
+    static Ternak Unta;
+    static final double PPN = 0.1;
+
+    public static void main(String[] args) {
+        Scanner Input = new Scanner(System.in);
+        int Menu;
+
+        Ternak Bebek = new Ternak("Bebek", "Telur Biasa", 15, 2, 30, 2000);
+        Ternak Domba = new Ternak("Domba", "Bulu Hitam", 4, 4, 16, 15000);
+        Ternak Unta = new Ternak("Unta", "Susu Putih", 3, 5, 15, 60000);
+
+        do {
+            System.out.print("Menu :\n" +
+                    "1. Menampilkan Informasi Peternakan\n" +
+                    "2. Menampilkan Total Pemasukan Harian\n" +
+                    "3. Menampilkan Harga Setelah PPN\n" +
+                    "4. Exit\n" +
+                    "Masukkan Menu Anda : ");
+            Menu = Input.nextInt();
+
+            switch (Menu) {
+                case 1:
+                    //BEBEK
+                    System.out.println(Bebek.garis1());
+                    System.out.println("Jenis              : " +Bebek.getJenisHewan());
+                    System.out.println("Ras                : " + Bebek.getRasHewan());
+                    System.out.println("Jumlah             : " + Bebek.getJumlahHewan() + " ekor");
+                    System.out.println("Telur/Ekor         : " + Bebek.getHasilTernak() + " Butir");
+                    System.out.println("Total Telur/Hari   : " + Bebek.getHasilTernakTotal() + " Butir");
+                    System.out.println("Harga Telur/Hari   : " + Bebek.getHargaSatuan());
+                    System.out.println(Bebek.garis1());
+
+                    //DOMBA
+                    System.out.println(Bebek.garis1());
+                    System.out.println("Jenis              : " + Domba.getJenisHewan());
+                    System.out.println("Ras                : " + Domba.getRasHewan());
+                    System.out.println("Jumlah             : " + Domba.getJumlahHewan() + " ekor");
+                    System.out.println("Telur/Ekor         : " + Domba.getHasilTernak() + "Kg");
+                    System.out.println("Total Bulu/Hari    : " + Domba.getHasilTernakTotal() + "Kg");
+                    System.out.println("Harga Bulu/Hari    : " + Domba.getHargaSatuan());
+                    System.out.println(Bebek.garis1());
+
+                    //UNTA
+                    System.out.println(Bebek.garis1());
+                    System.out.println("Jenis              : " + Unta.getJenisHewan());
+                    System.out.println("Ras                : " + Unta.getRasHewan());
+                    System.out.println("Jumlah             : " + Unta.getJumlahHewan() + " ekor");
+                    System.out.println("Telur/Ekor         : " + Unta.getHasilTernak() + " liter");
+                    System.out.println("Total Susu/Hari    : " + Unta.getHasilTernakTotal() + " liter");
+                    System.out.println("Harga Susu/Hari    : " + Unta.getHargaSatuan());
+                    System.out.println(Bebek.garis1());
+                    break;
+                case 2:
+                    System.out.println(Bebek.garis1());
+                    System.out.println("Jenis            : Bebek | Telur Biasa");
+                    System.out.println("Pemasukan        : " + Bebek.pemasukanTotal());
+                    System.out.println(Bebek.garis2());
+                    System.out.println("Jenis            : Domba | Bulu Hitam");
+                    System.out.println("Pemasukan        : " + Domba.pemasukanTotal());
+                    System.out.println(Bebek.garis2());
+                    System.out.println("Jenis            : Unta | Susu Putih");
+                    System.out.println("Pemasukan        : " + Unta.pemasukanTotal());
+                    System.out.println(Bebek.garis2());
+                    System.out.println("Total Pemasukan  : " + (Bebek.pemasukanTotal() + Domba.pemasukanTotal() + Unta.pemasukanTotal()));
+                    break;
+                case 3:
+                    System.out.println(Bebek.garis1());
+                    System.out.println("Jenis            : Bebek | Telur Biasa");
+                    System.out.println("Pemasukan        : " + Bebek.pemasukanPPN());
+                    System.out.println(Bebek.garis2());
+                    System.out.println("Jenis            : Domba | Bulu Hitam");
+                    System.out.println("Pemasukan        : " + Domba.pemasukanPPN());
+                    System.out.println(Bebek.garis2());
+                    System.out.println("Jenis            : Unta | Susu Putih");
+                    System.out.println("Pemasukan        : " + Unta.pemasukanPPN());
+                    System.out.println(Bebek.garis2());
+                    System.out.println("Total Pemasukan  : " + (Bebek.pemasukanPPN() + Domba.pemasukanPPN() + Unta.pemasukanPPN()));
+                    break;
+            }
+
+        } while (Menu != 4);
+        System.out.println("Anda keluar dari program");
+        Input.close();
+    }
+}
+
+class Ternak {
+    private String jenisHewan;
+    private String rasHewan;
+    private int jumlahHewan;
+    private int hasilTernak;
+    private int hasilTernakTotal;
+    private int hargaSatuan;
+
+
+    public Ternak(String jenisHewan, String rasHewan, int jumlahHewan, int hasilTernak, int hasilTernakTotal, int hargaSatuan) {
+        this.jenisHewan = jenisHewan;
+        this.rasHewan = rasHewan;
+        this.jumlahHewan = jumlahHewan;
+        this.hasilTernak = hasilTernak;
+        this.hasilTernakTotal = hasilTernakTotal;
+        this.hargaSatuan = hargaSatuan;
+    }
+
+    public String getJenisHewan() {
+        return jenisHewan;
+    }
+
+    public String getRasHewan() {
+        return rasHewan;
+    }
+
+    public int getJumlahHewan() {
+        return jumlahHewan;
+    }
+
+    public int getHasilTernak() {
+        return hasilTernak;
+    }
+
+    public int getHasilTernakTotal() {
+        return hasilTernakTotal;
+    }
+
+    public int getHargaSatuan() {
+        return hargaSatuan;
+    }
+
+    public void setJenisHewan(String jenisHewan) {
+        this.jenisHewan = jenisHewan;
+    }
+
+    public void setRasHewan(String rasHewan) {
+        this.rasHewan = rasHewan;
+    }
+
+    public void setJumlahHewan(int jumlahHewan) {
+        this.jumlahHewan = jumlahHewan;
+    }
+
+    public void setHasilTernak(int hasilTernak) {
+        this.hasilTernak = hasilTernak;
+    }
+
+    public void setHasilTernakTotal(int hasilTernakTotal) {
+        this.hasilTernakTotal = hasilTernakTotal;
+    }
+
+    public void setHargaSatuan(int hargaSatuan) {
+        this.hargaSatuan = hargaSatuan;
+    }
+
+    public String garis1() {
+        return ("=".repeat(40));
+    }
+
+    public String garis2() {
+        return ("-".repeat(40));
+    }
+
+    public int pemasukanTotal() {
+        return hasilTernak * hargaSatuan * jumlahHewan;
+    }
+
+    public int pemasukanPPN(){
+        return (int) (pemasukanTotal() + (pemasukanTotal() * Main.PPN));
+    }
+
+}
+
+
