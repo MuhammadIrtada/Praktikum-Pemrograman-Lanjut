@@ -1,7 +1,6 @@
 import java.util.Scanner;
 public class App {
 
-
     static final double PPN = 0.1;
     public static void main(String[] args) throws Exception {
 
