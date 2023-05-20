@@ -64,9 +64,14 @@ public class Main {
 
     public static void cetakHistory() {
         System.out.println("=".repeat(40));
+        if(transaksi.isEmpty()){
+            System.out.println("Belum ada transaksi");
+            System.out.println("=".repeat(40));
+        } else {
         for (String trans : transaksi) {
             System.out.println(trans);
         }
+    }
 
     }
 
