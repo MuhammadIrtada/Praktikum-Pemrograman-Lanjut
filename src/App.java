@@ -31,6 +31,9 @@ public class App {
                     break;
                 default:
                     loop = false;
+                    System.out.println("=".repeat(40));
+                    System.out.println("Terima Kasih - Riza Athaya");
+                    System.out.println("=".repeat(40));
                     break;
             }
         } while (loop);
