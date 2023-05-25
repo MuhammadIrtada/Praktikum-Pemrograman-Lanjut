@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class main {
     private static int kas = 25000000;
     private static int transaksiCount = 0;
     private static List<String> historyTransaksi = new ArrayList<>();
