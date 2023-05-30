@@ -148,8 +148,8 @@ public class Main {
         System.out.println("=".repeat(50));
         System.out.println("            Biaya Sehari-hari");
         System.out.println("=".repeat(50));
-        System.out.println("Ternak:                         Rp " + (pendapatanPeternakan - biayaPerawatanPeternakan));
-        System.out.println("Kebun:                          Rp " + (pendapatanPerkebunan - biayaPerawatanPerkebunan));
+        System.out.println("Pendapatan:                      Rp " + pendapatanTotal);
+        System.out.println("Perawatan:                       Rp " + biayaPerawatanTotal);
         System.out.println("-".repeat(50));
         System.out.println("Total:                          Rp " + biayaKehidupan);
 
