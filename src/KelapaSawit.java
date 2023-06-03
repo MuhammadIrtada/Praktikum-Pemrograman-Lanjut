@@ -1,30 +1,28 @@
-public class KelapaSawit extends Tanaman {
-    private int jumlah;
-    private int items;
-    private int harga;
-    private int rawat;
+import java.text.DecimalFormat;
 
-    KelapaSawit(int jumlah, int items, int harga, int rawat) {
-        this.jumlah = jumlah;
-        this.items = items;
-        this.harga = harga;
-        this.rawat = rawat;
-        super.setJenis("Kelapa Sawit");
-        super.setTotalPendapatan(pendapatan());
-        super.setTotalPerawatan(perawatan());
+public class KelapaSawit extends Perkebunan implements Interface {
+    static private DecimalFormat formatter = new DecimalFormat("#,###.##");
+    private String jenis;
+
+    KelapaSawit(double jumlah) {
+        super(jumlah);
+        this.jenis = "Kelapa Sawit";
+        super.setJenis(this.jenis);
+    }
+
+    public String getJenis() {
+        return jenis;
+    }
+
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
     }
 
     @Override
-    public double pendapatan() {
-        double rumus = this.jumlah * this.harga * this.items * 30;
-        super.setPendapatan(rumus);
-        return rumus;
+    public void Pembelian(int jumlah) {
+        double hasil = jumlah * 18000000;
+        super.setJumlah(jumlah);
+        System.out.printf("%-20s x%d : Rp %s\n", getJenis(), jumlah, formatter.format(hasil));
     }
 
-    @Override
-    public double perawatan() {
-        double rumus = this.jumlah * this.rawat * 30;
-        super.setPerawatan(rumus);
-        return rumus;
-    }
 }
