@@ -4,8 +4,8 @@ public class Unta extends Hewan {
     private int hasil;
     private float jualHasil;
 
-    public Unta(String jenis, int jumlahHewan, float hargaBeli, float hargaPerawatan, int hasil, float jualHasil){
-        super(jenis, jumlahHewan, hargaBeli, hargaPerawatan);
+    public Unta(String jenis, int jumlahHewan, float hargaPerawatan, int hasil, float jualHasil){
+        super(jenis, jumlahHewan, hargaPerawatan);
         this.hasil=hasil;
         this.jualHasil=jualHasil;
     }

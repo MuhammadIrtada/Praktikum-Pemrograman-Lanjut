@@ -3,14 +3,12 @@ package modul7;
 import java.util.Scanner;
 
 public class Main {
-    static Bebek bebek = new Bebek("Bebek", 15, 110000, 3000, 2, 2000);
-    static Domba domba = new Domba("Domba", 4, 2450000, 45000, 4, 15000);
-    static Unta unta = new Unta("Unta", 3, 12000000, 200000, 5, 60000);
-    static KelapaSawit kelapa = new KelapaSawit("Kelapa Sawit", 6, 18000000, 8500000, 500, 18000);
-    static Apel apel = new Apel("Apel", 5, 7500000, 900000, 40, 25000);
-    static float modal = 25000000;
+    static Bebek bebek = new Bebek("Bebek", 15, 3000, 2, 2000);
+    static Domba domba = new Domba("Domba", 4, 45000, 4, 15000);
+    static Unta unta = new Unta("Unta", 3, 200000, 5, 60000);
+    static KelapaSawit kelapa = new KelapaSawit("Kelapa Sawit", 6, 8500000, 500, 18000);
+    static Apel apel = new Apel("Apel", 5, 900000, 40, 25000);
     static Scanner tasya = new Scanner(System.in);
-    static int index = 0;
     static Hewan[] arrHewan={bebek,unta,domba};
     static Tanaman[] arrTanaman = {apel,kelapa};
 
@@ -20,6 +18,7 @@ public class Main {
             menu();
             System.out.print("Masukkan Menu Anda : ");
             int pilih = tasya.nextInt();
+            System.out.println();
             breakLine();
             switch (pilih) {
                 case 1:
@@ -44,7 +43,7 @@ public class Main {
     
     static void menu() {
         System.out.println(
-                "Menu:\n1. Peternakan\n2. Perkebunan\n3. All Budgeting\n4. Exit\n");
+                "Menu:\n1. Peternakan\n2. Perkebunan\n3. All Budgeting\n4. Exit");
     }
 
     public static void menu1() {
@@ -94,28 +93,28 @@ public class Main {
         // ternak
         System.out.println("Pendapatan Perbulan");
         breakLine();
-        System.out.printf("Ternak\t\t: Rp. %,.2f\nKebun\t\t: Rp. %,.2f\n",totalPendapatan(),totalPendapatan2());
+        System.out.printf("\nTernak\t\t: Rp. %,.2f\nKebun\t\t: Rp. %,.2f\n",totalPendapatan(),totalPendapatan2());
         breakLine2();
         float total1=totalPendapatan()+totalPendapatan2();
-        System.out.printf("TOTAL\t\t:Rp. %,.2f\n\n",total1);
+        System.out.printf("\nTOTAL\t\t:Rp. %,.2f\n\n",total1);
 
         // kebun
         breakLine();
         System.out.println("Perawatan Perbulan");
         breakLine();
-        System.out.printf("Ternak\t\t: Rp. %,.2f\nKebun\t\t: Rp. %,.2f\n",totalPerawatan(),totalPerawatan2());
+        System.out.printf("\nTernak\t\t: Rp. %,.2f\nKebun\t\t: Rp. %,.2f\n",totalPerawatan(),totalPerawatan2());
         breakLine2();
         float total2=totalPerawatan()+totalPerawatan2();
-        System.out.printf("TOTAL\t\t: Rp. %,.2f\n\n",total2);
+        System.out.printf("\nTOTAL\t\t: Rp. %,.2f\n\n",total2);
         breakLine();
 
         //biaya sehari
         breakLine();
         System.out.println("Biaya Sehari-hari");
         breakLine();
-        System.out.printf("Ternak\t\t: Rp. %,.2f\nKebun\t\t: Rp. %,.2f\n",total1,total2);
+        System.out.printf("\nTernak\t\t: Rp. %,.2f\nKebun\t\t: Rp. %,.2f\n",total1,total2);
         breakLine2();
-        System.out.printf("TOTAL\t\t: Rp. %,.2f\n\n",(total1-total2));
+        System.out.printf("\nTOTAL\t\t: Rp. %,.2f\n\n",(total1-total2));
         breakLine();
 
     }
@@ -141,12 +140,12 @@ public class Main {
     }
 
     public static float totalPerawatan2() {
-        // float total=0;
-        // for(int i= 0;i<arrTanaman.length;i++){
-        //     total +=arrTanaman[i].uangPerawatan();
-        // }
-        float total= arrTanaman[0].uangPerawatan() + arrTanaman[1].uangPerawatan();
-        return total;
+        float total=0;
+        for(int i= 0;i<arrTanaman.length;i++){
+            total +=arrTanaman[i].uangPerawatan();
+        }return total;
+        // float total=1.499f+ arrTanaman[0].uangPerawatan() + arrTanaman[1].uangPerawatan();
+        // return total;
     }
 
     

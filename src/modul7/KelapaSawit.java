@@ -4,8 +4,8 @@ public class KelapaSawit extends Tanaman{
     private int hasil;
     private float jualHasil;
 
-    public KelapaSawit(String jenis, int luasTanah, float hargaBeli, float hargaPerawatan, int hasil, float jualHasil){
-        super(jenis, luasTanah, hargaBeli, hargaPerawatan);
+    public KelapaSawit(String jenis, int luasTanah, float hargaPerawatan, int hasil, float jualHasil){
+        super(jenis, luasTanah, hargaPerawatan);
         this.hasil=hasil;
         this.jualHasil=jualHasil;
     }

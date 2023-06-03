@@ -3,13 +3,11 @@ package modul7;
 public abstract class Tanaman {
     private String jenis;
     private int luasTanah;
-    private float hargaBeli;//untuk pengembangan
     private float perawatan;
 
-    public Tanaman(String jenis, int luasTanah, float hargaBeli, float hargaPerawatan) {
+    public Tanaman(String jenis, int luasTanah, float hargaPerawatan) {
         this.jenis = jenis;
         this.luasTanah = luasTanah;
-        this.hargaBeli = hargaBeli;
         this.perawatan = hargaPerawatan;
     }
 
@@ -18,9 +16,6 @@ public abstract class Tanaman {
     }
     public int getJumlah(){
         return this.luasTanah;
-    }
-    public float getHargaBeli(){
-        return this.hargaBeli;
     }
     public float getHargaPerawatan(){
         return this.perawatan;
