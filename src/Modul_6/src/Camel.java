@@ -1,3 +1,5 @@
+package Modul_6.src;
+
 public class Camel extends Animal {
   private double dCostOfCamel = 12000000;
   private double dCostMaintenance = 200000;

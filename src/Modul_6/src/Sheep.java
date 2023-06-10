@@ -1,3 +1,5 @@
+package Modul_6.src;
+
 public class Sheep extends Animal {
   private double dCostOfSheep = 2450000;
   private double dCostMaintenance = 45000;

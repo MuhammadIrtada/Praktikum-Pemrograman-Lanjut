@@ -1,3 +1,5 @@
+package Modul_6.src;
+
 public class Coconut extends Plant{
   private double dCostMaintenance = 8500000;
   private double dCostCoconut = 18000000;

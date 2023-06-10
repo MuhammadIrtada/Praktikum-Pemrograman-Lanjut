@@ -1,3 +1,5 @@
+package Modul_6.src;
+
 import java.util.*;
 
 public class Animal {

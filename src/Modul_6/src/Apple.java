@@ -1,3 +1,5 @@
+package Modul_6.src;
+
 public class Apple extends Plant {
   private double dCostMaintenance = 900000;
   private double dCostGarden = 7500000;
