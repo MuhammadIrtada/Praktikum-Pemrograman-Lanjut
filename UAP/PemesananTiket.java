@@ -1,0 +1,3 @@
+class PemesananTiket {
+    // Do your magic here...
+}
